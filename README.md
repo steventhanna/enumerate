@@ -1,3 +1,3 @@
-# enumerate
+# Enumerate
 
-a [Sails](http://sailsjs.org) application
+The blogging platform for Computer Scientists
