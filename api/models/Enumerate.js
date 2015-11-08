@@ -1,14 +1,26 @@
 /**
-* Enumerate.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-*/
+ * Enumerate.js
+ *
+ * @author Steven T Hanna http://steventhanna.github.com/steventhanna
+ * @description :: The overall model for the project, called enumerate
+ * @docs        :: http://sailsjs.org/#!documentation/models
+ */
 
 module.exports = {
 
   attributes: {
 
+    storyList: {
+      type: 'array',
+    },
+
+    tags: {
+      type: 'array'
+    },
+
+    popularStack: {
+      type: 'array'
+    }
+
   }
 };
-

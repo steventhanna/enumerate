@@ -49,7 +49,7 @@ module.exports = {
     },
 
     // Array of stacks
-    stack: {
+    stacks: {
       type: 'array',
       required: true
     },

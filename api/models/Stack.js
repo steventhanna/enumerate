@@ -10,6 +10,12 @@ module.exports = {
 
   attributes: {
 
+    stackId: {
+      type: 'string',
+      unique: true,
+      required: true
+    },
+
     stories: {
       type: 'array',
       required: true
