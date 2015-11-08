@@ -37,6 +37,11 @@ module.exports = {
       required: true
     },
 
+    password: {
+      type: 'string',
+      required: true
+    },
+
     // Array of ids
     storiesAuthored: {
       type: 'array',

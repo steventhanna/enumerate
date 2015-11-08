@@ -1,14 +1,18 @@
 /**
-* Stack.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-*/
+ * Stack.js
+ *
+ * @author Steven T Hanna http://steventhanna.github.com/steventhanna
+ * @description :: The model for the stack, or the news field
+ * @docs        :: http://sailsjs.org/#!documentation/models
+ */
 
 module.exports = {
 
   attributes: {
 
+    stories: {
+      type: 'array',
+      required: true
+    }
   }
 };
-
