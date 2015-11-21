@@ -33,6 +33,6 @@ module.exports = {
 
   update: function(req, res) {
     var post = req.body;
-
+    u
   }
 };

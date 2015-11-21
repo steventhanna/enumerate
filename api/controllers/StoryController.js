@@ -6,6 +6,17 @@
  */
 
 module.exports = {
-	
-};
 
+  new: function(req, res) {
+
+  },
+
+  edit: function(req, res) {
+
+  },
+
+  delete: function(req, res) {
+
+  },
+
+};

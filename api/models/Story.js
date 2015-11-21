@@ -43,5 +43,9 @@ module.exports = {
       type: 'string',
     },
 
+    comments: {
+      type: 'array'
+    },
+
   }
 };
