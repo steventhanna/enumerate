@@ -63,12 +63,33 @@ module.exports = {
   },
 
   updateProfileStyling: function(req, res) {
-
-  }
-
-
-
-
-
+    var post = req.body;
+    User.findOne({
+      id: req.user.id
+    }).exec(function(err, user) {
+      if (err || user == undefined) {
+        console.log("There was an error finding the user.");
+        console.log("Error = " + err);
+        console.log("Error Code: 00006");
+        res.serverError();
+      } else {
+        if (post.profileStyling != undefined) {
+          user.profileStyling = post.profileStyling;
+          user.save(function(err) {
+            if (err) {
+              console.log("There was an error updating the user profile styling.");
+              console.log("Error = " + err);
+              console.log("Error Code: 00016");
+              res.serverError();
+            } else {
+              res.send({
+                success: true
+              });
+            }
+          });
+        }
+      }
+    });
+  },
 
 };
