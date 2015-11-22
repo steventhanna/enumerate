@@ -16,17 +16,7 @@ module.exports = {
       unique: true
     },
 
-    firstName: {
-      type: 'string',
-      required: true
-    },
-
-    lastName: {
-      type: 'string',
-      required: true
-    },
-
-    displayName: {
+    name: {
       type: 'string',
       required: true
     },
@@ -55,6 +45,11 @@ module.exports = {
     },
 
     following: {
+      type: 'array',
+      required: true
+    },
+
+    followers: {
       type: 'array',
       required: true
     },

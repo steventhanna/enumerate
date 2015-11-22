@@ -22,12 +22,11 @@ module.exports = {
     var accountDetails = {
       username: post.username,
       password: post.password,
-      firstName: post.firstName,
-      lastName: post.lastName,
-      displayName: post.firstName + " " + post.lastName,
+      name: post.name,
       storiesAuthored: [],
       stacks: [],
       following: [],
+      followers: [],
       history: [],
       profileStyling: ""
     };
