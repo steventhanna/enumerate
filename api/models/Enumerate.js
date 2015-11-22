@@ -10,6 +10,10 @@ module.exports = {
 
   attributes: {
 
+    name: {
+      type: 'string'
+    },
+
     storyList: {
       type: 'array',
     },

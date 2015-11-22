@@ -13,7 +13,8 @@ module.exports = {
     var data = {
       storyList: [],
       tags: [],
-      popularStack: []
+      popularStack: [],
+      name: "enumerate"
     };
 
     Enumerate.create(data).exec(function(err, enumer) {
@@ -33,6 +34,5 @@ module.exports = {
 
   update: function(req, res) {
     var post = req.body;
-    u
   }
 };
