@@ -14,6 +14,7 @@ The blogging platform for Computer Scientists
   - storiesSaved `array`
   - stack `array`
   - following `array`
+  - followers `array`
   - history `array`
   - profileStyling
 

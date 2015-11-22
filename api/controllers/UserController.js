@@ -7,7 +7,79 @@
 
 module.exports = {
 
+  // Serve the news feed
   newsFeed: function(req, res) {
+    /**
+     * Sort an array of objects based on a specified property
+     * @param property :: the property to sort the array of objects by
+     */
+    function dynamicSort(property) {
+      var sortOrder = 1;
+      if (property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+      }
+      return function(a, b) {
+        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+      }
+    }
+
+    User.findOne({
+      id: req.user.id
+    }).exec(function(err, user) {
+      if (err || user == undefined) {
+        console.log("There was an error finding the user.");
+        console.log("Error = " + err);
+        console.log("Error Code: 00006");
+        res.serverError();
+      } else {
+        // 1. Get popular stack
+        var currentFeed = [];
+        Enumerate.findOne({
+            name: "enumerate"
+          }).exec(function(err, num) {
+            if (err || num == undefined) {
+              console.log("There was an error finding enumerate.");
+              console.log("Error = " + err);
+              console.log("Error Code: 00012");
+              res.serverError();
+            } else {
+              currentFeed = num.popularStack;
+              // 2. Get recent stories by followers
+              var followerList = user.following;
+              // This probably is not write.
+              User.find((id: followerList)).exec(function findUser(err, found) {
+                while (found.length) {
+                  currentFeed.push(found.pop());
+                }
+                // This probably is not right either.
+                currentFeed.dynamicSort(dateCreated);
+              });
+
+              for (var i = 0; i < followerList; i++) {
+                User.findOne({
+                  id: followerList[i]
+                }).exec(function(err, newUser) {
+                  if (err || newUser == undefined) {
+                    console.log("There was an error finding the user.");
+                    console.log("Error = " + err);
+                    console.log("Error Code: 00006");
+                    res.serverError();
+                  } else {
+                    var storiesAuth = newUser.storiesAuthored;
+
+                  }
+                })
+              }
+            }
+          })
+          // 2. Get following recent stories
+          // 3. Sort by time authored
+
+
+      }
+    })
 
   },
 
