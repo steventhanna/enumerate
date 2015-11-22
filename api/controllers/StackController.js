@@ -1,22 +1,22 @@
-/**
- * StackController
- *
- * @description :: Server-side logic for managing Stacks
- * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
- */
+ /**
+  * StackController
+  *
+  * @description :: Server-side logic for managing Stacks
+  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
+  */
 
-module.exports = {
+ module.exports = {
 
-  new: function(req, res) {
+   new: function(req, res) {
 
-  },
+   },
 
-  edit: function(req, res) {
+   edit: function(req, res) {
 
-  },
+   },
 
-  delete: function(req, res) {
+   delete: function(req, res) {
 
-  },
+   },
 
-};
+ };
