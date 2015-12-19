@@ -62,7 +62,54 @@ module.exports = {
         });
       }
     });
+  },
 
+  edit: function(req, res) {
+    var post = req.body;
+    User.findOne({
+      id: req.user.id
+    }).exec(function(err, user) {
+      if (err || user == undefined) {
+        console.log("There was an error finding the user.");
+        console.log("Error = " + err);
+        console.log("Error Code: 00006");
+        res.serverError();
+      } else {
+        Comment.findOne({
+          commentId: post.commentId
+        }).exec(function(err, currentComment) {
+          if (err || currentComment == undefined) {
+            console.log("There was an error finding the comment.");
+            console.log("Error = " + err);
+            console.log("Error Code: 00016");
+            res.serverError();
+          } else {
+            if (post.contents != undefined && post.contents !== " ") {
+              currentComment.contents = post.contents;
+              currentComment.save(function(err) {
+                if (err) {
+                  console.log("There was an error saving the comment after edits.");
+                  console.log("Error = " + err);
+                  console.log("Error Code: 00017");
+                  res.send({
+                    success: false,
+                    error: true
+                  });
+                } else {
+                  res.send({
+                    success: true
+                  });
+                }
+              });
+            } else {
+              res.send({
+                success: false,
+                error: true
+              });
+            }
+          }
+        });
+      }
+    });
   }
-
 };
