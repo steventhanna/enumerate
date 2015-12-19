@@ -28,7 +28,8 @@ module.exports = {
       following: [],
       followers: [],
       history: [],
-      profileStyling: ""
+      profileStyling: "",
+      comments: []
     };
 
     User.create(accountDetails).exec(function(err, user) {

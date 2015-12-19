@@ -17,6 +17,10 @@ module.exports = {
       type: 'string'
     },
 
+    storyAssociated: {
+      type: 'string'
+    },
+
     commentId: {
       type: 'string',
       unique: true,
