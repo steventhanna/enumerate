@@ -26,7 +26,7 @@ module.exports = {
           comments: [],
           sid: Math.floor(Math.random() * 1000000000000000000000)
         };
-        Story.create(storyData).exec(function(err) {
+        Story.create(storyData).exec(function(err, newStory) {
           if (err) {
             console.log("There was an error creating the story.");
             console.log("Error = " + err);

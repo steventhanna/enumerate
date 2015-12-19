@@ -17,5 +17,11 @@ module.exports = {
       type: 'string'
     },
 
+    commentId: {
+      type: 'string',
+      unique: true,
+      required: true
+    }
+
   }
 };
