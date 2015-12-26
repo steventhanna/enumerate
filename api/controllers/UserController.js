@@ -49,7 +49,9 @@ module.exports = {
               // 2. Get recent stories by followers
               var followerList = user.following;
               // This probably is not write.
-              User.find((id: followerList)).exec(function findUser(err, found) {
+              User.find({
+                id: followerList
+              }).exec(function findUser(err, found) {
                 while (found.length) {
                   currentFeed.push(found.pop());
                 }
