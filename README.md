@@ -1,5 +1,7 @@
 # Enumerate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/steventhanna/enumerate.svg)](https://greenkeeper.io/)
+
 The blogging platform for Computer Scientists
 
 ## API Breakdown
